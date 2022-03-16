@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register_Activity">
+
+
+    <RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent" android:background="#FFFFFF">
+
+    <ImageView android:layout_height="300dp" android:layout_width="300dp" app:srcCompat="@drawable/home1" android:id="@+id/image1" android:layout_centerHorizontal="true"/>
+
+
+    -<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/register_v1" android:layout_centerHorizontal="true" android:layout_below="@+id/image1" android:orientation="vertical">
+
+    <EditText android:layout_height="60dp" android:layout_width="300dp" android:background="@drawable/back" android:id="@+id/userid" android:textSize="25sp" android:hint="아이디" android:layout_marginTop="10dp"/>
+
+    <EditText android:layout_height="60dp" android:layout_width="300dp" android:background="@drawable/back" android:id="@+id/email" android:textSize="25sp" android:hint="이메일" android:layout_marginTop="10dp"/>
+
+    <EditText android:layout_height="60dp" android:layout_width="300dp" android:background="@drawable/back" android:id="@+id/password1" android:textSize="25sp" android:hint="비밀번호" android:layout_marginTop="10dp"/>
+
+    <EditText android:layout_height="60dp" android:layout_width="300dp" android:background="@drawable/back" android:id="@+id/password2" android:textSize="25sp" android:hint="비밀번호 확인" android:layout_marginTop="10dp"/>
+
+</LinearLayout>
+
+    <Button android:layout_height="50dp" android:layout_width="80dp" android:background="@drawable/btn_state2" android:id="@+id/registbutton" android:layout_centerHorizontal="true" android:layout_below="@+id/register_v1" android:textSize="20sp" android:layout_marginTop="30dp"/>
+
+</RelativeLayout>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

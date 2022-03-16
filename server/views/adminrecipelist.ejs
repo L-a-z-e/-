@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+ <!--  Content (배너이미지) 부분 -->
+  <div> <img src="/images/admin_banner.png" class="img-fluid" alt="배너이미지" width="100%"> </div>
+
+  <!-- 컨텐츠(예, 쇼핑몰일경우 판매제품리스트)헤더부분 -->
+   <div class="container-fluid" style="border: solid 20px white; border-radius: 1px">
+     <div class="panel panel-default">
+   	  <div class="panel-heading">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">자취세끼</a></li>
+            <li class="breadcrumb-item">관리자</a></li>
+            <li class="breadcrumb-item">레시피관리</a></li>
+            <li class="breadcrumb-item active" aria-current="page">레시피리스트</li>
+          </ol>
+        </nav>
+   	  </div>
+      <hr>
+      <div class="container">
+         <div>
+            <form style=float:right action = '/adminrecipe/search' method=get>
+                <input type="text" placeholder="메뉴이름으로검색" name="menuname">
+                <button type="submit" class="btn btn-primary">검색</button>
+            </form>
+         </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> 번호 </th>
+                <th> 메뉴이름 </th>
+                <th> 난이도 </th>
+                <th> 카테고리 </th> 
+                <th> 레시피유무 </th> 
+              </tr>
+            </thead>
+            <tbody>
+                <% if(leng == 0){ %>
+                  <tr>
+                    <td> 메뉴정보가 없습니다. </td>
+                  </tr>
+                <% }else if(leng == 1){ %>
+                    <% var item = menudata[0]; %>
+                    <tr>
+                        <td> 1</td>  
+                        <td> 
+                          <form action='/adminrecipe/listdetail' method=get id=<%=item.menunum %> >
+                            <a href=# onclick="document.getElementById(<%=item.menunum %>).submit();"><%=item.menuname%></a>
+                              <input type='hidden' name='menunum', value=<%=item.menunum %>>
+                              <input type='hidden' name='recipenum' value=<%=item.recipenum %>>
+                              <input type='hidden' name='image' value=<%=item.image %>>
+                              <input type='hidden' name='menuname' value=<%=item.menuname %>>
+                          </form>
+                        </td> 
+                        <td> <%=item.difficulty%> </td>
+                        <td> <%=item.category%></td>  
+                        <td> <%=item.recipeexistence%></td> 
+                    </tr>
+                <% }else{ %>
+                    <% for(var i=page_num*(page - 1); i<page*page_num; i++){ %>
+                         <% if(i == leng){ %>
+                           <% break; %>
+                         <% }else{ %>
+                                <% var item = menudata[i]; %>
+                                <tr>
+                                    <td> <%=i+1%></td>   
+                                    <td> 
+                                      <form action='/adminrecipe/listdetail' method=get id=<%=item.menunum %> >
+                                        <a href=# onclick="document.getElementById(<%=item.menunum %>).submit();"><%=item.menuname%></a>
+                                          <input type='hidden' name='menunum', value=<%=item.menunum %>>
+                                          <input type='hidden' name='recipenum' value=<%=item.recipenum %>>
+                                          <input type='hidden' name='image' value=<%=item.image %>>
+                                          <input type='hidden' name='menuname' value=<%=item.menuname %>>
+                                      </form>
+                                    </td>    
+                                    <td> <%=item.difficulty%> </td>
+                                    <td> <%=item.category%></td>
+                                    <td> <%=item.recipeexistence%></td>
+                                </tr>
+                         <% } %>
+                    <% } %>
+                <% } %>
+            </tbody>
+            </table>
+          </div>
+
+  <p>
+  <nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+      <li class="page-item active" aria-current="page">
+      <a class="page-link" href="/adminrecipe/list/1">1 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="/adminrecipe/list/2">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

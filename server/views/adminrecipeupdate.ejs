@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="width:800px; margin:auto">
+
+    <div class="bm-login-form" style='width:700px; margin-left:auto; margin-right:auto; border:1px'>
+
+      <div class="starter-template">
+        <h4> 레시피수정</h4> <hr>
+      </div>
+
+   <form name=join onsubmit="return validate()" method=post action="/adminrecipe/update?_method=PUT" enctype="multipart/form-data"> 
+      <input type="hidden" name="_method" value="put" />
+      <% var menuname = menuname; %>
+      <% var recipenum = recipenum; %>
+      <% var menunum = menunum; %>
+      <input type='hidden' name='menunum' value=<%=menunum %>> 
+      <div class="form-group col-md-6">    
+        <div class="form-group">
+         <label for="exampleFormControlSelect1">메뉴이름</label>
+          <select class="form-control" id="exampleFormControlSelect1" name=category>
+            <option><%=menuname %></option>
+          </select>
+       </div>
+      </div>
+       <% for(var i = 1; i <= recipenum; i++) { %>
+        <div class="form-group">
+          <label for="exampleInputEmail1">조리순서<%=i %></label>
+          <input type="text" class="form-control" name="recipeorder" id="recipeorder" aria-describedby="emailHelp" placeholder="조리방법입력">
+        </div>
+        <label for="exampleInputEmail1">조리순서<%=i %> 이미지 (적정사이즈:250x180)</label>
+        <div class="form-group">
+          <input type="file" class="custom-file-input2" id="entry" width=10px aria-describedby="entry2" accept="image/*" name="photo" multiple>
+        </div>
+       <% } %>
+         <hr>
+         <button style="float:right" type="submit" class="btn btn-primary">레시피수정</button>
+      </form>
+     </div>
+     </div>
+    </div><!-- /.container -->
+
+ <!-- Footer 영역 -->

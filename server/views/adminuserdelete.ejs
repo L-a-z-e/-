@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+ <!--  Content (배너이미지) 부분 -->
+  <div> <img src="/images/admin_banner.png" class="img-fluid" alt="배너이미지" width="100%"> </div>
+
+  <!-- 컨텐츠(예, 쇼핑몰일경우 판매제품리스트)헤더부분 -->
+   <div class="container-fluid" style="border: solid 20px white; border-radius: 1px">
+     <div class="panel panel-default">
+   	  <div class="panel-heading">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">자취세끼</a></li>
+            <li class="breadcrumb-item">관리자</a></li>
+            <li class="breadcrumb-item">회원관리</a></li>
+            <li class="breadcrumb-item active" aria-current="page">회원삭제</li>
+          </ol>
+        </nav>
+   	  </div>
+
+      <hr>
+      <div class="container">
+          <div>
+              <form style=float:right action = '/adminuser/searchdelete' method=get>
+                  <input type="text" placeholder="아이디로검색" name="userid">
+                  <button type="submit" class="btn btn-primary">검색</button>
+              </form>
+           </div>
+          <form action = '/adminuser/delete?_method=DELETE' method=post>
+            <input type="hidden" name="_method" value="delete" />
+              <table class="table table-striped">
+              <thead>
+                <tr>
+                <th> 아이디 </th>
+                <th> 비밀번호 </th>
+                <th> 이메일 </th>
+                <th> 삭제체크 </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(leng == 0){ %>
+                  <tr>
+                    <td> 회원정보가 없습니다. </td>
+                  </tr>
+                <% }else if(leng == 1){ %>
+                  <% var item = userdata[0]; %>
+                  <tr>
+                      <td> <%=item.userid%></td>   
+                      <td> <%=item.password%> </td>
+                      <td> <%=item.email%> </td>
+                      <td> <input type = "checkbox", name = "usernum", value = <%= item.usernum %>></td>
+                  </tr>
+                <% }else{ %>
+                  <% for(var i=page_num*(page - 1); i<page*page_num; i++){ %>
+                       <% if(i == leng){ %>
+                         <% break; %>
+                       <% }else{ %>
+                              <% var item = userdata[i]; %>
+                              <tr>
+                                <td> <%=item.userid%></td>   
+                                <td> <%=item.password%> </td>
+                                <td> <%=item.email%> </td>
+                                <td> <input type = "checkbox", name = "usernum", value = <%= item.usernum %>></td>
+                              </tr>
+                       <% } %>
+                  <% } %>
+                <% } %>
+            </tbody>
+            </table>
+            <button style="float:right" type="submit" class="btn btn-primary">회원삭제</button>
+            </form>
+          </div>
+
+  <p>
+  <nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+      <li class="page-item active" aria-current="page">
+      <a class="page-link" href="/adminuser/delete/1">1 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="/adminuser/delete/2">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

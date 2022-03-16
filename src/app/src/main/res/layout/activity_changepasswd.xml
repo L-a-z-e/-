@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".changepasswd">
+    <RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent" android:background="#FFFFFF">
+
+    <ImageView
+        android:layout_height="300dp"
+        android:layout_width="300dp"
+        app:srcCompat="@drawable/home1"
+        android:id="@+id/image1"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText android:layout_height="60dp" android:layout_width="300dp" android:background="@drawable/back" android:id="@+id/ch_passwd1" android:layout_centerHorizontal="true" android:textSize="20sp" android:hint="변경할 비밀번호" android:layout_marginTop="70dp" android:layout_below="@+id/image1"/>
+
+    <EditText android:layout_height="60dp" android:layout_width="300dp" android:background="@drawable/back" android:id="@+id/ch_passwd2" android:layout_centerHorizontal="true" android:textSize="20sp" android:hint="비밀번호 확인" android:layout_marginTop="10dp" android:layout_below="@+id/ch_passwd1"/>
+
+    <Button android:layout_height="50dp" android:layout_width="80dp" android:background="@drawable/btn_state2" android:id="@+id/changebtn" android:layout_centerHorizontal="true" android:textSize="20sp" android:layout_marginTop="30dp" android:layout_below="@id/ch_passwd2"/>
+
+</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

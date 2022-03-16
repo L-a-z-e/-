@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ <!--  Content (배너이미지) 부분 -->
+  <div> <img src="/images/admin_banner.png" class="img-fluid" alt="배너이미지" width="100%"> </div>
+
+  <!-- 컨텐츠(예, 쇼핑몰일경우 판매제품리스트)헤더부분 -->
+   <div class="container-fluid" style="border: solid 20px white; border-radius: 1px">
+     <div class="panel panel-default">
+   	  <div class="panel-heading">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">자취세끼</a></li>
+            <li class="breadcrumb-item">관리자</a></li>
+            <li class="breadcrumb-item">메뉴관리</a></li>
+            <li class="breadcrumb-item">메뉴리스트</a></li>
+            <li class="breadcrumb-item active" aria-current="page">메뉴상세정보</li>
+          </ol>
+        </nav>
+   	  </div>
+      <hr>
+      <div class="container">
+          <% var item = menudata[0]; %>
+          <table class="table table-striped" style="text-align:center">
+            <thead>
+              <p style="text-align:center">
+                <img class="img-fluid" src=<%=item.image %>>
+              </p>
+            </thead>
+            <tbody>
+              <tr>
+               <td >메뉴이름 : <%=item.menuname%></td>
+              </tr>
+              <tr>
+               <td>재료 : <%=item.meterial%></td>
+              </tr>
+              <tr>
+               <td>난이도 : <%=item.difficulty%></td>
+              </tr>
+              <tr>
+               <td>카테고리 : <%=item.category%></td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+
+  <p>

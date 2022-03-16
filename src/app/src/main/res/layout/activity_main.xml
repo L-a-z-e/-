@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent" android:background="#FFFFFF">
+
+    <ImageView android:layout_height="300dp" android:layout_width="300dp" app:srcCompat="@drawable/home1" android:id="@+id/image1" android:layout_centerHorizontal="true"/>
+
+    <EditText android:layout_height="60dp" android:layout_width="300dp" android:background="@drawable/back" android:id="@+id/userid_main" android:layout_centerHorizontal="true" android:layout_marginTop="50dp" android:hint=" ID" android:layout_below="@+id/image1"/>
+
+    <EditText android:layout_height="60dp" android:layout_width="300dp" android:background="@drawable/back" android:id="@+id/password_main" android:layout_centerHorizontal="true" android:layout_marginTop="10dp" android:hint=" Password" android:layout_below="@+id/userid_main"/>
+
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/btn_state" android:id="@+id/loginbtn" android:layout_centerHorizontal="true" android:layout_marginTop="40dp" android:layout_below="@id/password_main" android:textSize="15sp" android:layout_marginLeft="50dp"/>
+
+
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_centerHorizontal="true" android:layout_marginTop="50dp" android:layout_below="@+id/loginbtn" android:orientation="horizontal">
+
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="#FFFFFF" android:id="@+id/registerbtn" android:textSize="15sp" android:text="회원가입"/>
+
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="#FFFFFF" android:id="@+id/searchid" android:textSize="15sp" android:text="아이디 찾기"/>
+
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="#FFFFFF" android:id="@+id/searchpasswd" android:textSize="15sp" android:text=" 비밀번호 찾기"/>
+
+</LinearLayout>
+
+</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

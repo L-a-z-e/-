@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+ <!--  Content (배너이미지) 부분 -->
+  <div> <img src="/images/admin_banner.png" class="img-fluid" alt="배너이미지" width="100%"> </div>
+
+  <!-- 컨텐츠(예, 쇼핑몰일경우 판매제품리스트)헤더부분 -->
+   <div class="container-fluid" style="border: solid 20px white; border-radius: 1px">
+     <div class="panel panel-default">
+   	  <div class="panel-heading">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">자취세끼</a></li>
+            <li class="breadcrumb-item">관리자</a></li>
+            <li class="breadcrumb-item">레시피관리</a></li>
+            <li class="breadcrumb-item">레시피리스트</a></li>
+            <li class="breadcrumb-item active" aria-current="page">레시피상세정보</li>
+          </ol>
+        </nav>
+   	  </div>
+      <hr>
+      <div class="container">
+          <% var item = recipedata[0]; %>
+          <% var recipenum = recipenum; %>
+          <% var image = image; %>
+          <% var menuname = menuname; %>
+          <% var menunum = menunum; %>
+          <table class="table table-striped" style="text-align:center">
+            <thead>
+              <p style="text-align:center">
+                <img class="img-fluid" src=<%=image %>>
+              </p>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="2">메뉴이름 : <%=menuname%></td>
+              </tr>
+              <tr>
+                <td colspan="2">조리순서</td>
+              </tr>
+              <% if(leng == 0) { %>
+                <tr>
+                  <td>등록된 레시피가 없습니다.</td>
+                </tr>
+              <% }else{ %>
+                <% if(item.recipeorder1 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder1 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage1 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder2 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder2 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage2 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder3 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder3 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage3 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder4 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder4 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage4 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder5 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder5 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage5 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder6 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder6 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage6 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder7 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder7 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage7 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder8 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder8 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage8 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder9 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder9 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage9 %>></td>
+                  </tr>
+                <% } %>
+                <% if(item.recipeorder10 != null){ %>
+                  <tr>
+                    <td><%=item.recipeorder10 %></td>
+                    <td><img height="135px" width="196px" class="img-fluid" src=<%=item.orderimage10 %>></td>
+                  </tr>
+                <% } %>                
+              <% } %>
+            </tbody>
+            </table>
+          <% if(leng == 0) { %>
+            <form method=get action="/adminrecipe/upload">
+              <input type='hidden' name='recipenum' value=<%=recipenum %>> 
+              <input type='hidden' name='menuname' value=<%=menuname %>>
+              <input type='hidden' name='menunum' value=<%=menunum %>>
+              <button style="float:right" type="submit" class="btn btn-primary">레시피등록</button>
+            </form>
+          <% }else { %>
+            <form method=get action="/adminrecipe/update">
+              <input type='hidden' name='recipenum' value=<%=recipenum %>> 
+              <input type='hidden' name='menunum' value=<%=menunum %>>
+              <input type='hidden' name='menuname' value=<%=menuname %>>
+              <button style="float:right" type="submit" class="btn btn-primary">레시피수정</button>
+            </form>
+          <% } %>
+      </div>
+
+  <p>

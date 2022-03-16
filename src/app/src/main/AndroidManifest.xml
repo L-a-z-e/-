@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gachon.example.project">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo2"
+        android:label="자취세끼"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".recipe_Activity"></activity>
+        <activity android:name=".loading" />
+        <activity android:name=".changepasswd" />
+        <activity android:name=".searchpasswd" />
+        <activity android:name=".searchid" />
+        <activity android:name=".meat_Activity" />
+        <activity android:name=".ingredient_Activity" />
+        <activity android:name=".home_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".register_Activity" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

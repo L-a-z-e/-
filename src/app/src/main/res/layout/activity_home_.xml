@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+
+
+    <RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent" android:background="#FFFFFF">
+
+    <ImageView android:layout_height="300dp"
+        android:layout_width="300dp"
+        app:srcCompat="@drawable/home1"
+        android:scaleType="fitXY"
+        android:layout_weight="1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/homeimg1"
+        android:layout_marginTop="0dp"/>
+
+    <ImageView
+        android:layout_height="200dp"
+        android:layout_width="150dp"
+        app:srcCompat="@drawable/home2"
+        android:scaleType="fitXY"
+        android:layout_weight="1"
+        android:id="@+id/homeimg2"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/homeimg1"/>
+
+    <ImageView
+        android:layout_height="200dp"
+        android:layout_width="150dp"
+        app:srcCompat="@drawable/home3"
+        android:scaleType="fitXY"
+        android:layout_weight="1"
+        android:id="@+id/homeimg3"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="57dp"
+        android:layout_below="@+id/homeimg1"
+        android:layout_toRightOf="@+id/homeimg2"
+        android:layout_marginRight="20dp"/>
+
+    <Button android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="#FFFFFF"
+        android:id="@+id/ingredient_menu"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="39dp"
+        android:layout_below="@+id/homeimg2"
+        android:textSize="20sp"
+        android:text="재료 보고 선택"
+        android:layout_alignParentLeft="true"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="#FFFFFF"
+        android:id="@+id/recipe_menu"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/homeimg2"
+        android:layout_marginRight="22dp"
+        android:textSize="20sp"
+        android:text="레시피 보고 선택"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/main_nav_header"
+        app:menu="@menu/main_navigation_menu"
+       >
+
+    </android.support.design.widget.NavigationView>
+
+
+
+
+
+
+</android.support.v4.widget.DrawerLayout>

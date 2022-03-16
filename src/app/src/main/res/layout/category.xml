@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="4">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kind1"
+        android:text="한식"
+        android:textSize="15sp"
+        android:background="#FFFFFF"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kind2"
+        android:text="중식"
+        android:textSize="15sp"
+        android:background="#FFFFFF"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kind3"
+        android:text="양식"
+        android:textSize="15sp"
+        android:background="#FFFFFF"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kind4"
+        android:text="일식"
+        android:textSize="15sp"
+        android:background="#FFFFFF"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kind5"
+        android:text="기타"
+        android:textSize="15sp"
+        android:background="#FFFFFF"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/categorylist"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
